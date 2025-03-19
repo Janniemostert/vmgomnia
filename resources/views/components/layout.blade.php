@@ -105,5 +105,15 @@ document.querySelectorAll("[class^='c-']").forEach((el) => {
 });
 
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.car-img').forEach(function(img) {
+            img.onerror = function() {
+                console.error('Failed to load image:', this.src); // Log the error
+                this.src = 'https://fakeimg.pl/300x300';
+            };
+        });
+    });
+</script>
 </body>
 </html>
